@@ -1,0 +1,9 @@
+Just to remind myself how to deploy on GAE. I should probably move this to capistrano.
+
+google_appengine/appcfg.py update iths/
+
+Running the dev server:
+
+google_appengine/dev_appserver.py iths/
+
+Also: http://code.google.com/appengine/docs/
