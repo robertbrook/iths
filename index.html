@@ -21,7 +21,7 @@
   <h1>In the Commons&mdash;</h1>
   
   {% for entry in commons.entries %}
-		<p><strong><a href="{{entry.link}}">{{entry.title}}</a></strong>
+		<p><strong>{{entry.title}}</strong>
 			{{entry.summary}}
 		</p>
 	{% endfor %}
@@ -33,7 +33,7 @@
   
   {% for entry in lords.entries %}
 
-		<p><strong><a href="{{entry.link}}">{{entry.title}}</a></strong>
+		<p><strong>{{entry.title}}</strong>
 			{{entry.summary}}
 		</p>
 	{% endfor %}
