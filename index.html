@@ -1,0 +1,48 @@
+<html>
+<head><title>Is The House Sitting?</title>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/default.css" />
+    <link rel="alternate" type="application/atom+xml" href="http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/programmes/bbc_parliament/rss.xml" title="BBC Parliament">
+    <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Commons calendar">
+    <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Lords calendar">
+</head>
+  <body>
+  
+  {% if not lords_sitting and not commons_sitting %}
+  <h1>No, the House isn't sitting.<br/>In the meantime, here's BBC Parliament.</h1>
+  {% for entry in bbc.entries %}
+
+		<p><strong><a href="{{entry.link}}">{{entry.title}}</a></strong>
+		{{entry.summary}}</p>
+
+	{% endfor %}
+  {% endif %}
+  
+  {% if commons_sitting %}
+  <h1>In the Commons&hellip;</h1>
+  
+  {% for entry in commons.entries %}
+		<p><strong><a href="{{entry.link}}">{{entry.title}}</a></strong>
+			{{entry.summary}}
+		</p>
+	{% endfor %}
+	
+  {% endif %}
+  
+  {% if lords_sitting %}
+  <h1>In the Lords&hellip;</h1>
+  
+  {% for entry in lords.entries %}
+
+		<p><strong><a href="{{entry.link}}">{{entry.title}}</a></strong>
+			{{entry.summary}}
+		</p>
+	{% endfor %}
+	
+  {% endif %}
+	<hr/>
+
+<p>The content on this page is generated from <a href="http://services.parliament.uk/calendar/">the UK Parliamentary Calendar</a> and from <a href="http://news.bbc.co.uk/1/hi/programmes/bbc_parliament/">BBC Parliament</a>.</p>
+
+  </body>
+</html>
+
