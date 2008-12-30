@@ -10,3 +10,7 @@ handlers:
 - url: /.*
   script: default.py
 
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+  mime_type: image/vnd.microsoft.icon
