@@ -1,48 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<head><title>Is The House Sitting?</title>
-    <link type="text/css" rel="stylesheet" href="/stylesheets/default.css" />
-    <link rel="alternate" type="application/atom+xml" href="http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/programmes/bbc_parliament/rss.xml" title="BBC Parliament">
+<head>
+   <title>Is The House Sitting?</title>
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.5.1/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <link rel="stylesheet" type="text/css" href="./stylesheets/default.css">  
+   <link rel="alternate" type="application/atom+xml" href="http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/programmes/bbc_parliament/rss.xml" title="BBC Parliament">
     <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Commons calendar">
     <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Lords calendar">
 </head>
-  <body>
-  
-  {% if not lords_sitting and not commons_sitting %}
-  <h1>No, the House isn't sitting.<br/>In the meantime, here's BBC Parliament.</h1>
-  {% for entry in bbc.entries %}
-
-		<p><strong><a href="{{entry.link}}">{{entry.title}}</a></strong>
-		{{entry.summary}}</p>
-
+<body class="yui-skin-sam">
+<div id="doc" class="yui-t7">
+   <div id="hd"><h1>Is The House Sitting?</h1></div>
+   <div id="bd">
+	    <div class="yui-gb">
+        <div class="yui-u first" id="bbc-parliament">
+        <h2>BBC Parliament</h2>
+{% for entry in bbc.entries %}
+<div class="entry">
+		<h3><a href="{{entry.link}}">{{entry.title}}</a></h3>
+		<p>{{entry.summary}}</p>
+</div>
 	{% endfor %}
-  {% endif %}
-  
-  {% if commons_sitting %}
-  <h1>In the Commons &mdash;</h1>
-  
+	        </div>
+        <div class="yui-u" id="commons">
+
+  <h2>The House of Commons</h2>
+          {% if commons_sitting %}
   {% for entry in commons.entries %}
-		<p><strong>{{entry.title}}</strong>
-			{{entry.summary}}
-		</p>
+  <div class="entry">
+		<h3>{{entry.title}}</h3>
+			<p>{{entry.summary}}</p>
+			</div>
 	{% endfor %}
 	
   {% endif %}
   
-  {% if lords_sitting %}
-  <h1>In the Lords &mdash;</h1>
-  
+ 
+	        </div>
+        <div class="yui-u" id="lords">
+
+  <h2>The House of Lords</h2>
+            {% if lords_sitting %}
   {% for entry in lords.entries %}
-
-		<p><strong>{{entry.title}}</strong>
-			{{entry.summary}}
+  <div class="entry">
+		<h3>{{entry.title}}</h3>
+			<p>{{entry.summary}}
 		</p>
+		</div>
 	{% endfor %}
 	
   {% endif %}
-	
+	        </div>
+    </div>
 
-<p id="footer">The content on this page is generated from <a href="http://services.parliament.uk/calendar/">the UK Parliamentary Calendar</a> and from <a href="http://news.bbc.co.uk/1/hi/programmes/bbc_parliament/">BBC Parliament</a>. This service is hosted on Google App Engine and <a href="http://github.com/robertbrook/iths">the code is public at GitHub</a>.</p>
-
-  </body>
+	</div>
+   <div id="ft">The content on this page is generated from <a href="http://services.parliament.uk/calendar/">the UK Parliamentary Calendar</a> and from <a href="http://news.bbc.co.uk/1/hi/programmes/bbc_parliament/">BBC Parliament</a>. This service is hosted on Google App Engine and <a href="http://github.com/robertbrook/iths">the code is public at GitHub</a>.</div>
+</div>
+</body>
 </html>
 

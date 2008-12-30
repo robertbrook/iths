@@ -1,7 +1,12 @@
-html { font-family: Arial, "helvetica", sans-serif; }
-body { margin: 2em auto; width: 47.5em; }
-address { font-style: normal;}
-p { line-height:140%; }
-a {text-decoration: none;font-weight:normal;}
-h1,h2,h3 {font-weight:normal;}
+a {text-decoration:none;}
+#hd, #ft {padding:2em 0;}
+#hd h1 { font-size: 140%; }
+#bd { min-height: 300px; }
+#bd h2 { font-weight: bold; padding:.5em 0;}
+#bd h3 { font-size: 120%; font-weight:bold; margin: .5em 0;}
+#bd #bbc-parliament .entry { border: 1px solid #426FD9; background-color: #F2F2F2; min-height: 180px; padding: .5em; margin: .5em 0;}
+#bd #commons .entry { border: 1px solid darkgreen; background-color: lightgreen; min-height: 180px; padding: .5em; }
+#bd #lords .entry { border: 1px solid crimson; background-color: lightpink; min-height: 180px; padding: .5em; }
 
+
+        
