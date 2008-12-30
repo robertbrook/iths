@@ -18,7 +18,7 @@
 	    <div class="yui-gb">
         <div class="yui-u first" id="bbc-parliament">
 	 <h2>BBC Parliament</h2>
-{% for entry in bbc.entries %}
+{% for entry in bbc.entries reversed %}
 <div class="entry">
 		<h3><a href="{{entry.link}}">{{entry.title}}</a></h3>
 		<p>{{entry.summary}}</p>
@@ -29,7 +29,7 @@
 
   <h2>The House of Commons</h2>
           {% if commons_sitting %}
-  {% for entry in commons.entries %}
+  {% for entry in commons.entries reversed %}
   <div class="entry">
 		<h3>{{entry.title}}</h3>
 			<p>{{entry.summary}}</p>
@@ -42,7 +42,7 @@
 
   <h2>The House of Lords</h2>
             {% if lords_sitting %}
-  {% for entry in lords.entries %}
+  {% for entry in lords.entries reversed %}
   <div class="entry">
 		<h3>{{entry.title}}</h3>
 			<p>{{entry.summary}}
