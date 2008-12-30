@@ -1,8 +1,10 @@
 a {text-decoration:none;}
-#hd, #ft {padding:2em 0;}
+#hd, #ft {padding:1em 0; }
 #hd h1 { font-size: 140%; }
 #bd { min-height: 300px; }
-#bd h2 { font-weight: bold; padding:.5em 0;}
+#bd #bbc-parliament h2 { font-weight: bold; font-size: 120%; padding:.5em;}
+#bd #commons h2 { font-weight: bold; padding:.5em;margin-bottom:.5em;}
+#bd #lords h2 { font-weight: bold; padding:.5em;margin-bottom:.5em;}
 #bd h3 { font-size: 120%; font-weight:bold; margin: .5em 0;}
 #bd #bbc-parliament .entry { border: 1px solid #426FD9; background-color: #F2F2F2; min-height: 180px; padding: .5em; margin: .5em 0;}
 #bd #commons .entry { border: 1px solid darkgreen; background-color: lightgreen; min-height: 180px; padding: .5em; }
