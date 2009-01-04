@@ -35,6 +35,11 @@
 			<p>{{entry.summary}}</p>
 			</div>
 	{% endfor %}
+	{% else %}
+	<div class="entry">
+		<h3>Not sitting</h3>
+			<p>Probably. The House of Commons Calendar feed is blank.</p>
+			</div>
 	
   {% endif %}
 	        </div>
@@ -49,7 +54,11 @@
 		</p>
 		</div>
 	{% endfor %}
-	
+	{% else %}
+	<div class="entry">
+		<h3>Not sitting</h3>
+			<p>Probably. The House of Lords Calendar feed is blank.</p>
+			</div>
   {% endif %}
 	        </div>
     </div>
