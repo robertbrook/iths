@@ -13,7 +13,7 @@
 <body>
 <script src="http://iths.uservoice.com/pages/general/widgets/tab.js?alignment=left&amp;color=000" type="text/javascript"></script>
 <div id="doc" class="yui-t7">
-   <div id="hd"><h1>Is The House Sitting?</h1></div>
+   <div id="hd"><h1>Is The House Sitting?</h1>{{ demo }}</div>
    <div id="bd">
 	    <div class="yui-gb">
         <div class="yui-u first" id="bbc-parliament">
@@ -21,7 +21,8 @@
 {% for entry in bbc.entries reversed %}
 <div class="entry">
 		<h3><a href="{{entry.link}}">{{entry.title}}</a></h3>
-		<p>{{entry.summary}}</p>
+		<p><span class="time">{{entry.updated}}</span>{{entry.summary}}
+		</p>
 </div>
 	{% endfor %}
 	        </div>

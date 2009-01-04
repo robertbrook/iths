@@ -9,6 +9,6 @@ a {text-decoration:none;}
 #bd #bbc-parliament .entry { border: 1px solid #426FD9; background-color: #F2F2F2; min-height: 180px; padding: .5em 1em; margin: .5em 0;}
 #bd #commons .entry { border: 1px solid darkgreen; background-color: lightgreen; min-height: 180px; padding: .5em 1em; }
 #bd #lords .entry { border: 1px solid crimson; background-color: lightpink; min-height: 180px; padding: .5em 1em; }
-.feed-icon { float:right; }
+.time { font-size:85%;display:block;font-weight:bold; }
 
         
