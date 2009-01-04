@@ -5,6 +5,25 @@ from google.appengine.ext.webapp import template
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 
+import time 
+from datetime import datetime 
+def make_datetime(s, fmt='%Y-%m-%d %H:%M'): 
+     '''convert string to datetime''' 
+     ts = time.mktime(time.strptime(s, fmt)) 
+     return datetime.fromtimestamp(ts) 
+def inRange(s, ranges): 
+     dt = make_datetime(s) 
+     for begin,end in ranges: 
+         if begin <= dt <= end: 
+             return True 
+     else: 
+         return False 
+ranges = [(make_datetime(b), make_datetime(e)) for (b,e) in [ 
+     ('2008-12-18 23:59', '2009-01-12 00:00'), 
+     ('2005-06-12 12:30', '2005-06-14 15:30'), 
+     ]] 
+# print inRange('2005-06-11 12:30', ranges)
+
 class MainPage(webapp.RequestHandler):
   def get(self):
     commons_sitting = 0
@@ -17,6 +36,8 @@ class MainPage(webapp.RequestHandler):
     if lords.entries: lords_sitting = 1
     
     template_values = {
+      'today': datetime.today().strftime('%Y-%m-%d %H:%M'),
+      'inRecess': inRange(datetime.today().strftime('%Y-%m-%d %H:%M'), ranges),
       'commons': commons,
       'lords': lords,
       'bbc': bbc,

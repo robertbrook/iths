@@ -38,7 +38,11 @@
 	{% else %}
 	<div class="entry">
 		<h3>Probably not</h3>
-			<p>The House of Commons Calendar feed is blank.</p>
+			<p>{% if inRecess %}
+			According to the UK Parliament site, the House of Commons is in Recess. <br/><br/>
+			{% endif %}
+			The House of Commons Calendar feed has no entries for today.</p>
+			
 			</div>
 	
   {% endif %}
@@ -57,7 +61,8 @@
 	{% else %}
 	<div class="entry">
 		<h3>Probably not</h3>
-			<p>The House of Lords Calendar feed is blank.</p>
+			<p>I'm not sure if the House of Lords is in Recess, I've not written the code yet.<br/><br/>The House of Lords Calendar feed has no entries for today.</p>
+			
 			</div>
   {% endif %}
 	        </div>
