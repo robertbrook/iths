@@ -1,4 +1,4 @@
-Just to remind myself how to deploy on GAE. I should probably move this to capistrano.
+Just to remind myself how to deploy on GAE. I should write shortcuts for this stuff.
 
 google_appengine/appcfg.py update iths/
 
@@ -8,8 +8,4 @@ google_appengine/dev_appserver.py iths/
 
 Also: http://code.google.com/appengine/docs/
 
-TODO
-
-cap tasks
-
-link to github project
+Read more at: http://robertbrook.com/is-the-house-sitting/
