@@ -34,7 +34,7 @@ class MainPage(webapp.RequestHandler):
     lords = get_feed("http://services.parliament.uk/calendar/lords.rss")
     # bbc = get_feed("http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/uk_politics/rss.xml")
     bbc = get_feed("http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/programmes/bbc_parliament/rss.xml")
-
+    parliament = get_feed("http://twitter.com/statuses/user_timeline/6467332.atom")
     if commons.entries: commons_sitting = 1
     if lords.entries: lords_sitting = 1
     
@@ -44,6 +44,7 @@ class MainPage(webapp.RequestHandler):
       'commons': commons,
       'lords': lords,
       'bbc': bbc,
+      'parliament': parliament,
       'commons_sitting': commons_sitting,
       'lords_sitting': lords_sitting,
        }

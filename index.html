@@ -5,7 +5,7 @@
    <title>Is The House Sitting?</title>
    <link rel="stylesheet" href="http://yui.yahooapis.com/2.5.1/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
    <link rel="stylesheet" type="text/css" href="./stylesheets/default.css">  
-   <link rel="alternate" type="application/atom+xml" href="http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/programmes/bbc_parliament/rss.xml" title="BBC Parliament">
+   <link rel="alternate" type="application/atom+xml" href="http://twitter.com/statuses/user_timeline/6467332.atom" title="UKParliament on Twitter">
     <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Commons calendar">
     <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Lords calendar">
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -13,16 +13,14 @@
 <body>
 <script src="http://iths.uservoice.com/pages/general/widgets/tab.js?alignment=left&amp;color=000" type="text/javascript"></script>
 <div id="doc" class="yui-t7">
-   <div id="hd"><h1>Is The House Sitting?</h1>{{ demo }}</div>
+   <div id="hd"><h1>Is The House Sitting?</h1></div>
    <div id="bd">
 	    <div class="yui-gb">
-        <div class="yui-u first" id="bbc-parliament">
-	 <h2>BBC Parliament</h2>
-{% for entry in bbc.entries reversed %}
+        <div class="yui-u first" id="parliament">
+	 <h2>UK Parliament on Twitter</h2>
+{% for entry in parliament.entries %}
 <div class="entry">
-		<h3><a href="{{entry.link}}">{{entry.title}}</a></h3>
-		<p><span class="time">{{entry.updated}}</span>{{entry.summary}}
-		</p>
+<p>{{entry.title}}</p>
 </div>
 	{% endfor %}
 	        </div>
@@ -70,7 +68,7 @@
     </div>
 
 	</div>
-   <div id="ft"><a href="http://www.isthehousesitting.com">Is The House Sitting</a> is not endorsed by the UK Parliament. The content on this page is generated from <a href="http://services.parliament.uk/calendar/">the UK Parliamentary Calendar</a> and from <a href="http://news.bbc.co.uk/1/hi/programmes/bbc_parliament/">BBC Parliament</a>. This service is hosted on <a href="http://code.google.com/appengine/">Google App Engine</a> and <a href="http://github.com/robertbrook/iths">the code is public at GitHub</a>.
+   <div id="ft"><a href="http://www.isthehousesitting.com">Is The House Sitting</a> is not endorsed by the UK Parliament. The content on this page is generated from <a href="http://services.parliament.uk/calendar/">the UK Parliamentary Calendar</a> and from <a href="http://www.twitter.com/ukparliament">the UK Parliament Twitter feed</a>. This service is hosted on <a href="http://code.google.com/appengine/">Google App Engine</a> and <a href="http://github.com/robertbrook/iths">the code is public at GitHub</a>.
    
    </div>
 </div>
