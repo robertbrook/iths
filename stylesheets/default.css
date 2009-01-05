@@ -6,9 +6,9 @@ a {text-decoration:none;}
 #bd #commons h2 { font-size: 120%; padding:.5em;margin-bottom:.5em;background-color: darkgreen;color:white;}
 #bd #lords h2 { font-size: 120%; padding:.5em;margin-bottom:.5em;background-color: crimson;color:white;}
 #bd h3 { font-size: 120%; margin: .5em 0;}
-#bd #parliament .entry { border-bottom: 1px solid #426FD9; min-height: 100px; padding: .5em; margin: .5em 0;}
-#bd #commons .entry { border-bottom: 1px solid darkgreen; min-height: 100px; padding: .5em; }
-#bd #lords .entry { border-bottom: 1px solid crimson; min-height: 100px; padding: .5em; }
+#bd #parliament .entry { border-bottom: 1px solid #426FD9; height: 100px; padding: .5em; margin: .5em 0;}
+#bd #commons .entry { border-bottom: 1px solid darkgreen; height: 100px; padding: .5em; }
+#bd #lords .entry { border-bottom: 1px solid crimson; height: 100px; padding: .5em; }
 .time { font-size:85%;display:block;font-weight:bold; }
 strong {font-weight:bold;}
 address {display:inline;}        
