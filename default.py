@@ -1,6 +1,5 @@
 import os
 import feedparser
-from operator import itemgetter
 from google.appengine.api import urlfetch
 from google.appengine.ext.webapp import template
 from google.appengine.ext import webapp
@@ -38,6 +37,10 @@ class MainPage(webapp.RequestHandler):
     if commons.entries: commons_sitting = 1
     if lords.entries: lords_sitting = 1
     
+    del parliament.entries[10:]
+
+    for entry in parliament.entries:
+        entry.title = entry.title[14:]
     template_values = {
       'today': datetime.today().strftime('%Y-%m-%d %H:%M'),
       'inRecess': inRange(datetime.today().strftime('%Y-%m-%d %H:%M'), ranges),
