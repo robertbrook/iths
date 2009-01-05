@@ -1,7 +1,7 @@
 a {text-decoration:none;}
 #hd, #ft {padding:1em 0;}
 #hd h1 { font-size: 180%; color: #333;font-weight:bold;}
-#bd { min-height: 300px; }
+#bd { min-height: 300px;font-size:116%; }
 #bd #parliament h2 { font-weight: bold; font-size: 120%; padding:.5em;color: #333;}
 #bd #commons h2 { font-weight: bold; font-size: 120%; padding:.5em;margin-bottom:.5em;color: #333;}
 #bd #lords h2 { font-weight: bold; font-size: 120%; padding:.5em;margin-bottom:.5em;color: #333;}
