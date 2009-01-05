@@ -20,7 +20,7 @@
 	 <h2>UK Parliament on Twitter</h2>
 {% for entry in parliament.entries %}
 <div class="entry">
-<p>{{entry.title}}</p>
+<p>{{entry.title|urlize}}</p>
 </div>
 	{% endfor %}
 	        </div>
