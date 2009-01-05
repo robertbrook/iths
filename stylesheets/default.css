@@ -2,13 +2,13 @@ a {text-decoration:none;}
 #hd, #ft {padding:1em 0;}
 #hd h1 { font-size: 180%; color: #333;}
 #bd { min-height: 300px;font-size:116%; }
-#bd #parliament h2 { font-size: 120%; padding:.5em;color: #426FD9;}
-#bd #commons h2 { font-size: 120%; padding:.5em;margin-bottom:.5em;color: darkgreen;}
-#bd #lords h2 { font-size: 120%; padding:.5em;margin-bottom:.5em;color: crimson;}
+#bd #parliament h2 { font-size: 120%; padding:.5em;background-color: #426FD9;color:white;}
+#bd #commons h2 { font-size: 120%; padding:.5em;margin-bottom:.5em;background-color: darkgreen;color:white;}
+#bd #lords h2 { font-size: 120%; padding:.5em;margin-bottom:.5em;background-color: crimson;color:white;}
 #bd h3 { font-size: 120%; margin: .5em 0;}
-#bd #parliament .entry { border-top: 4px solid #426FD9; min-height: 90px; padding: .5em 1em; margin: .5em 0;}
-#bd #commons .entry { border-top: 4px solid darkgreen; min-height: 90px; padding: .5em 1em; }
-#bd #lords .entry { border-top: 4px solid crimson; min-height: 90px; padding: .5em 1em; }
+#bd #parliament .entry { border-bottom: 1px solid #426FD9; min-height: 100px; padding: .5em; margin: .5em 0;}
+#bd #commons .entry { border-bottom: 1px solid darkgreen; min-height: 100px; padding: .5em; }
+#bd #lords .entry { border-bottom: 1px solid crimson; min-height: 100px; padding: .5em; }
 .time { font-size:85%;display:block;font-weight:bold; }
 
         

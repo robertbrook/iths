@@ -30,8 +30,8 @@
           {% if commons_sitting %}
   {% for entry in commons.entries reversed %}
   <div class="entry">
-		<h3>{{entry.title}}</h3>
-			<p>{{entry.summary}}</p>
+		
+			<p><strong>{{entry.title}}</strong> {{entry.summary}}</p>
 			</div>
 	{% endfor %}
 	{% else %}
@@ -52,8 +52,8 @@
             {% if lords_sitting %}
   {% for entry in lords.entries reversed %}
   <div class="entry">
-		<h3>{{entry.title}}</h3>
-			<p>{{entry.summary}}
+		
+			<p><strong>{{entry.title}}</strong> {{entry.summary}}
 		</p>
 		</div>
 	{% endfor %}
