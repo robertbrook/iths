@@ -12,7 +12,7 @@ def make_datetime(s, fmt='%Y-%m-%d %H:%M'):
      '''convert string to datetime''' 
      ts = time.mktime(time.strptime(s, fmt)) 
      return datetime.fromtimestamp(ts) 
-def inRange(s, ranges): 
+def inRangeCommons(s, ranges): 
      dt = make_datetime(s) 
      for begin,end in ranges: 
          if begin <= dt <= end: 
@@ -21,9 +21,25 @@ def inRange(s, ranges):
          return False 
 ranges = [(make_datetime(b), make_datetime(e)) for (b,e) in [ 
      ('2008-12-18 23:59', '2009-01-12 00:00'), 
-     # ('2005-06-12 12:30', '2005-06-14 15:30'), 
+     ('2009-02-12 00:00', '2009-02-23 23:59'), 
+     ('2009-04-02 00:00', '2009-04-20 23:59'),
+     ('2009-05-21 00:00', '2009-06-01 23:59'),
+     ('2009-07-21 00:00', '2009-08-12 23:59')
      ]] 
-# print inRange('2005-06-11 12:30', ranges)
+def inRangeLords(s, ranges): 
+     dt = make_datetime(s) 
+     for begin,end in ranges: 
+         if begin <= dt <= end: 
+             return True 
+     else: 
+         return False 
+ranges = [(make_datetime(b), make_datetime(e)) for (b,e) in [ 
+     ('2008-12-18 23:59', '2009-01-12 00:00'), 
+     ('2009-02-12 00:00', '2009-02-23 23:59'), 
+     ('2009-04-02 00:00', '2009-04-20 23:59'),
+     ('2009-05-21 00:00', '2009-06-01 23:59'),
+     ('2009-07-21 00:00', '2009-08-12 23:59')
+     ]] 
 
 class MainPage(webapp.RequestHandler):
   def get(self):
@@ -31,8 +47,6 @@ class MainPage(webapp.RequestHandler):
     lords_sitting = 0
     commons = get_feed("http://services.parliament.uk/calendar/commons.rss")
     lords = get_feed("http://services.parliament.uk/calendar/lords.rss")
-    # bbc = get_feed("http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/uk_politics/rss.xml")
-    bbc = get_feed("http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/programmes/bbc_parliament/rss.xml")
     parliament = get_feed("http://twitter.com/statuses/user_timeline/6467332.atom")
     if commons.entries: commons_sitting = 1
     if lords.entries: lords_sitting = 1
@@ -43,10 +57,10 @@ class MainPage(webapp.RequestHandler):
         entry.title = entry.title[14:]
     template_values = {
       'today': datetime.today().strftime('%Y-%m-%d %H:%M'),
-      'inRecess': inRange(datetime.today().strftime('%Y-%m-%d %H:%M'), ranges),
+      'inRecessCommons': inRangeCommons(datetime.today().strftime('%Y-%m-%d %H:%M'), ranges),
+      'inRecessLords': inRangeLords(datetime.today().strftime('%Y-%m-%d %H:%M'), ranges),
       'commons': commons,
       'lords': lords,
-      'bbc': bbc,
       'parliament': parliament,
       'commons_sitting': commons_sitting,
       'lords_sitting': lords_sitting,

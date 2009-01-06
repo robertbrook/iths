@@ -27,20 +27,27 @@
         <div class="yui-u" id="commons">
 
   <h2>The House of Commons</h2>
+  {% if inRecessCommons %}
+  <div class="entry">
+		
+			<p><strong>The House of Commons is in Recess.</strong></p>
+			
+			</div>
+
+			{% endif %}
+			
+			
           {% if commons_sitting %}
   {% for entry in commons.entries reversed %}
   <div class="entry">
 		
-			<p><strong>{{entry.title}}</strong> {{entry.summary}}</p>
+			<p>{{entry.title}} {{entry.summary}}</p>
 			</div>
 	{% endfor %}
 	{% else %}
 	<div class="entry">
-		<h3>Probably not</h3>
-			<p>{% if inRecess %}
-			According to the UK Parliament site, the House of Commons is in Recess. <br/><br/>
-			{% endif %}
-			The House of Commons Calendar feed has no entries for today.</p>
+		
+			<p>The House of Commons Calendar has no entries for today.</p>
 			
 			</div>
 	
@@ -49,18 +56,27 @@
         <div class="yui-u" id="lords">
 
   <h2>The House of Lords</h2>
+  {% if inRecessLords %}
+  <div class="entry">
+		
+			<p><strong>The House of Lords is in Recess.</strong></p>
+			
+			</div>
+
+			{% endif %}
+			
             {% if lords_sitting %}
   {% for entry in lords.entries reversed %}
   <div class="entry">
 		
-			<p><strong>{{entry.title}}</strong> {{entry.summary}}
+			<p>{{entry.title}} {{entry.summary}}
 		</p>
 		</div>
 	{% endfor %}
 	{% else %}
 	<div class="entry">
-		<h3>Probably not</h3>
-			<p>I'm not sure if the House of Lords is in Recess, I've not written the code yet.<br/><br/>The House of Lords Calendar feed has no entries for today.</p>
+
+			<p>The House of Lords Calendar has no entries for today.</p>
 			
 			</div>
   {% endif %}
@@ -68,7 +84,7 @@
     </div>
 
 	</div>
-   <div id="ft"><a href="http://www.isthehousesitting.com">Is The House Sitting</a> is not endorsed by the UK Parliament or Millbank Systems. The content on this page is generated from <a href="http://services.parliament.uk/calendar/">the UK Parliamentary Calendar</a> and from <a href="http://www.twitter.com/ukparliament">the UK Parliament Twitter feed</a>. This service is hosted on <a href="http://code.google.com/appengine/">Google App Engine</a> and <a href="http://github.com/robertbrook/iths">the code is public at GitHub</a>. <a href="http://robertbrook.com/is-the-house-sitting/">More about this site</a>. Your feedback is welcome at <address>mail@robertbrook.com</address>.
+   <div id="ft"><a href="http://www.isthehousesitting.com">Is The House Sitting</a> is not endorsed by the <a href="http://www.parliament.uk">UK Parliament</a> or <a href="http://www.millbanksystems.com">Millbank Systems</a>. The content on this page is generated from <a href="http://services.parliament.uk/calendar/">the UK Parliamentary Calendar</a> and from <a href="http://www.twitter.com/ukparliament">the UK Parliament Twitter feed</a>. This service is hosted on <a href="http://code.google.com/appengine/">Google App Engine</a> and <a href="http://github.com/robertbrook/iths">the code is public at GitHub</a>. All Recess dates are <a href="http://www.parliament.uk/what_s_on/recess.cfm">provisional</a>. <a href="http://robertbrook.com/is-the-house-sitting/">More about this site</a>. Your feedback is welcome at <address>mail@robertbrook.com</address>.
    
    </div>
 </div>
