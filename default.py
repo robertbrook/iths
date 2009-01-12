@@ -55,6 +55,10 @@ class MainPage(webapp.RequestHandler):
 
     for entry in parliament.entries:
         entry.title = entry.title[14:]
+        
+    # for entry in commons.entries:
+    #     if entry.title == "Westminster Hall -": commons.entries.remove(entry)
+    #     if entry.summary == "": commons.entries.remove(entry)
     template_values = {
       'today': datetime.today().strftime('%Y-%m-%d %H:%M'),
       'inRecessCommons': inRangeCommons(datetime.today().strftime('%Y-%m-%d %H:%M'), ranges),
