@@ -13,3 +13,4 @@ a {text-decoration:none;}
 strong {font-weight:bold;}
 address {display:inline;}        
 #ft {border-top:1pt solid #333;}
+.title {font-size: smaller;text-transform: uppercase;}
