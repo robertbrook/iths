@@ -16,40 +16,24 @@
    <div id="hd"><h1>Is The House Sitting?</h1></div>
    <div id="bd">
 	    <div class="yui-gb">
-        <div class="yui-u first" id="parliament">
-	 <h2>UK Parliament on Twitter</h2>
-{% for entry in parliament.entries %}
-<div class="entry">
-<p>{{entry.title|urlize}}</p>
-</div>
-	{% endfor %}
-	        </div>
-        <div class="yui-u" id="commons">
+
+        <div class="yui-u first" id="commons">
 
   <h2>The House of Commons</h2>
-  {% if inRecessCommons %}
-  <div class="entry">
-		
-			<p><strong>The House of Commons is in Recess.</strong></p>
+  {% if inRecessCommons %} <ol><li>The House of Commons is in Recess.</li></ol> {% endif %}
 			
-			</div>
-
-			{% endif %}
-			
-			
-          {% if commons_sitting %}
+{% if commons_sitting %}
+<ol>
   {% for entry in commons.entries reversed %}
-  <div class="entry">
-		
-			<p>{{entry.title}} {{entry.summary}}</p>
-			</div>
+  <li>{{entry.title}} {{entry.summary}}</li>
 	{% endfor %}
+	</ol>
 	{% else %}
-	<div class="entry">
+	<ol>
 		
-			<p>The House of Commons Calendar has no entries for today.</p>
+			<li>The House of Commons Calendar has no entries for today.</li>
 			
-			</div>
+			</ol>
 	
   {% endif %}
 	        </div>
@@ -57,30 +41,32 @@
 
   <h2>The House of Lords</h2>
   {% if inRecessLords %}
-  <div class="entry">
 		
-			<p><strong>The House of Lords is in Recess.</strong></p>
-			
-			</div>
-
+			<ol><li>The House of Lords is in Recess.</li></ol>
 			{% endif %}
 			
             {% if lords_sitting %}
+<ol>
   {% for entry in lords.entries reversed %}
-  <div class="entry">
-		
-			<p>{{entry.title}} {{entry.summary}}
-		</p>
-		</div>
+<li>{{entry.title}} {{entry.summary}}</li>
 	{% endfor %}
+	</ol>
 	{% else %}
-	<div class="entry">
+	<ol>
 
-			<p>The House of Lords Calendar has no entries for today.</p>
+			<li>The House of Lords Calendar has no entries for today.</li>
 			
-			</div>
+			</ol>
   {% endif %}
 	        </div>
+	
+			        <div class="yui-u" id="parliament">
+				 <h2>twitter.com/UKParliament</h2>
+				<ol>
+			{% for entry in parliament.entries %}
+			<li>{{entry.title|urlize}}</li>
+				{% endfor %}
+				        </ol>
     </div>
 
 	</div>
