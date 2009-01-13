@@ -7,10 +7,10 @@ a {text-decoration:none;}
 #bd #lords h2 { font-size: 120%; padding:.5em;background-color: crimson;color:white;}
 #bd h3 { font-size: 120%; margin: .5em 0;}
 #bd #parliament li { padding: .5em; margin: .5em 0;}
-#bd #commons li { padding: .5em; margin: .5em 0;}
-#bd #lords li { padding: .5em; margin: .5em 0;}
+#bd #commons li { padding: .5em; margin: .5em 0;font-weight: bold;}
+#bd #lords li { padding: .5em; margin: .5em 0;font-weight: bold;}
 .time { font-size:85%;display:block;font-weight:bold; }
 strong {font-weight:bold;}
 address {display:inline;}        
 #ft {border-top:1pt solid #333;}
-.title {font-size: smaller;text-transform: uppercase;}
+.title {font-weight: normal;}
