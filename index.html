@@ -64,7 +64,8 @@
 				 <h2>twitter.com/UKParliament</h2>
 				<ol>
 			{% for entry in parliament.entries %}
-			<li>{{entry.title|urlize}}</li>
+			<li>{{entry.title|urlize}} - {{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</li>
+			
 				{% endfor %}
 				        </ol>
     </div>
