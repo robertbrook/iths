@@ -66,7 +66,7 @@ jQuery.fn.longurl = function(config) {
 			var domain = link.attr('href').match(/^http:\/\/([^\/]+)\/.+/i);
 			
 			if (domain && searchArray(domain[1], known_services) !== -1) {
-				link.after(' <span class="longurl"><a href="#" onClick="toggleLink(this); return false;" class="expand">expand</a><img src="'+config.working_image+'" style="display:none;" /></span>');
+				link.after(' <span class="longurl"><a href="#" onClick="toggleLink(this); return false;" class="expand" title="Stretch this URL">&rarr;</a><img src="'+config.working_image+'" style="display:none;" /></span>');
 			}
 		});
 	};
@@ -74,15 +74,19 @@ jQuery.fn.longurl = function(config) {
 	toggleLink = function(toggle) {
 		toggle = jQuery(toggle);
 		var link = toggle.parent().prev('a');
+		var linktext = link.attr({title:link.text()})
 		
 		if (toggle.hasClass('expand')) {
 			expandLink(toggle, link);
 			toggle.removeClass('expand').addClass('contract');
-			toggle.html('contract');
+			toggle.attr({title:"Squash this URL"});
+            // link.attr({title:link.text()})
+			toggle.html('&larr;');
 		} else {
 			link.html(dataCache(escape(link.attr('href'))).original_text);
 			toggle.removeClass('contract').addClass('expand');
-			toggle.html('expand');
+			toggle.attr({title:"Stretch this URL"});
+			toggle.html('&rarr;');
 		}
 	};
 	

@@ -14,3 +14,4 @@ strong {font-weight:bold;}
 address {display:inline;}        
 #ft {border-top:1pt solid #333;}
 .title {font-weight: normal;}
+.expand, .contract {font-weight:bold;}
