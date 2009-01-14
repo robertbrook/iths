@@ -67,6 +67,7 @@ jQuery.fn.longurl = function(config) {
 			
 			if (domain && searchArray(domain[1], known_services) !== -1) {
 				link.after(' <span class="longurl"><a href="#" onClick="toggleLink(this); return false;" class="expand" title="Stretch this URL">&rarr;</a><img src="'+config.working_image+'" style="display:none;" /></span>');
+                // link.text("Stretch this URL");
 			}
 		});
 	};
@@ -74,7 +75,7 @@ jQuery.fn.longurl = function(config) {
 	toggleLink = function(toggle) {
 		toggle = jQuery(toggle);
 		var link = toggle.parent().prev('a');
-		var linktext = link.attr({title:link.text()})
+        // var linktext = link.attr({title:link.text()})
 		
 		if (toggle.hasClass('expand')) {
 			expandLink(toggle, link);
