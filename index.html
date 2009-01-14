@@ -24,7 +24,7 @@
 			
 {% if commons_sitting %}
 <ol>
-  {% for entry in commons.entries reversed %}
+  {% for entry in commons.entries %}
   <li>{{entry.summary}} <span class="title">{{entry.title}}</span></li>
 	{% endfor %}
 	</ol>
@@ -47,7 +47,7 @@
 			
             {% if lords_sitting %}
 <ol>
-  {% for entry in lords.entries reversed %}
+  {% for entry in lords.entries %}
 <li>{{entry.summary}} <span class="title">{{entry.title}}</span></li>
 	{% endfor %}
 	</ol>
@@ -64,7 +64,7 @@
 				 <h2>twitter.com/UKParliament</h2>
 				<ol>
 			{% for entry in parliament.entries %}
-			<li>&#8220;{{entry.title|urlize}}&#8221; <!--<span class="date">{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</span>--></li>
+			<li>{{entry.title|urlize}} <!--<span class="date">{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</span>--></li>
 			
 				{% endfor %}
 				        </ol>
