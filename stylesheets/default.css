@@ -1,17 +1,17 @@
 a {text-decoration:none;}
-#hd, #ft {padding:1em 0;}
-#hd h1 { font-size: 180%; color: #333;}
-#bd { min-height: 300px;font-size:116%; }
-#bd #parliament h2 { font-size: 120%; padding:.5em;background-color: #426FD9;color:white;}
-#bd #commons h2 { font-size: 120%; padding:.5em;background-color: darkgreen;color:white;}
-#bd #lords h2 { font-size: 120%; padding:.5em;background-color: crimson;color:white;}
-#bd h3 { font-size: 120%; margin: .5em 0;}
-#bd #parliament li { padding: .5em; margin: .5em 0;}
-#bd #commons li { padding: .5em; margin: .5em 0;font-weight: bold;}
-#bd #lords li { padding: .5em; margin: .5em 0;font-weight: bold;}
-.time { font-size:85%;display:block;font-weight:bold; }
-strong {font-weight:bold;}
-address {display:inline;}        
-#ft {border-top:1pt solid #333;}
-.title {font-weight: normal;}
-.expand, .contract {font-weight:bold;}
+body {width:33%;min-width:250px;margin:auto;background-color:white;color:#333;}
+h1, h2 {font-size:100%;color:#666;}
+ol
+{
+padding-left: 0;
+margin-left: 0;
+}
+
+ol li
+{
+list-style: none;
+margin: 0;
+padding: 0.5em 0;
+}
+
+#commons, #lords, #twitter, #footer {border-top: 1pt solid #999;padding:0 0.5em;margin:0.5em 0;}

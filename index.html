@@ -2,8 +2,7 @@
  "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-   <title>Is The House Sitting?</title>
-   <link rel="stylesheet" href="http://yui.yahooapis.com/2.5.1/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <title>isthehousesitting.com</title>
    <link rel="stylesheet" type="text/css" href="./stylesheets/default.css">  
    <link rel="alternate" type="application/atom+xml" href="http://twitter.com/statuses/user_timeline/6467332.atom" title="UKParliament on Twitter">
     <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Commons calendar">
@@ -11,16 +10,12 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
 </head>
 <body id="isthehousesitting-com">
-<div id="doc" class="yui-t7">
 	<a href="http://github.com/robertbrook/iths"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
-   <div id="hd"><h1>Is The House Sitting?</h1></div>
-   <div id="bd">
-	    <div class="yui-gb">
 
-        <div class="yui-u first" id="commons">
-
-  <h2>The House of Commons</h2>
-  {% if inRecessCommons %} <ol><li>The House of Commons is in Recess.</li></ol> {% endif %}
+	<h1>isthehousesitting.com</h1>
+	<!--Commons --><div id="commons">
+	<h2>The House of Commons</h2>
+          {% if inRecessCommons %} <ol><li>The House of Commons is in Recess.</li></ol> {% endif %}
 			
 {% if commons_sitting %}
 <ol>
@@ -35,12 +30,11 @@
 			
 			</ol>
 	
-  {% endif %}
-	        </div>
-        <div class="yui-u" id="lords">
-
-  <h2>The House of Lords</h2>
-  {% if inRecessLords %}
+  {% endif %}</div>
+  <!-- //commons -->
+  
+  <!-- Lords --><div id="lords"><h2>The House of Lords</h2>
+	 {% if inRecessLords %}
 		
 			<ol><li>The House of Lords is in Recess.</li></ol>
 			{% endif %}
@@ -57,24 +51,16 @@
 			<li>The House of Lords Calendar has no entries for today.</li>
 			
 			</ol>
-  {% endif %}
-	        </div>
-	
-			        <div class="yui-u" id="parliament">
-				 <h2>twitter.com/UKParliament</h2>
-				<ol>
+  {% endif %}</div><!-- //lords --><!-- Twitter -->
+<div id="twitter">
+	<h2>@UKParliament on Twitter</h2><ol>
 			{% for entry in parliament.entries %}
 			<li>{{entry.title|urlize}} <!--<span class="date">{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</span>--></li>
 			
 				{% endfor %}
-				        </ol>
-    </div>
+				        </ol></div><!-- //Twitter -->
+				        <div id="footer"><p><a href="http://www.isthehousesitting.com">Is The House Sitting</a> is not endorsed by the <a href="http://www.parliament.uk">UK Parliament</a> or <a href="http://www.millbanksystems.com">Millbank Systems</a>. The content on this page is generated from <a href="http://services.parliament.uk/calendar/">the UK Parliamentary Calendar</a> and from <a href="http://www.twitter.com/ukparliament">the UK Parliament Twitter feed</a>. This service is hosted on <a href="http://code.google.com/appengine/">Google App Engine</a> and <a href="http://github.com/robertbrook/iths">the code is public at GitHub</a>. All Recess dates are <a href="http://www.parliament.uk/what_s_on/recess.cfm">provisional</a>. <a href="http://robertbrook.com/is-the-house-sitting/">More about this site</a>. Your feedback is welcome at mail@robertbrook.com.</p></div>
 
-	</div>
-   <div id="ft"><a href="http://www.isthehousesitting.com">Is The House Sitting</a> is not endorsed by the <a href="http://www.parliament.uk">UK Parliament</a> or <a href="http://www.millbanksystems.com">Millbank Systems</a>. The content on this page is generated from <a href="http://services.parliament.uk/calendar/">the UK Parliamentary Calendar</a> and from <a href="http://www.twitter.com/ukparliament">the UK Parliament Twitter feed</a>. This service is hosted on <a href="http://code.google.com/appengine/">Google App Engine</a> and <a href="http://github.com/robertbrook/iths">the code is public at GitHub</a>. All Recess dates are <a href="http://www.parliament.uk/what_s_on/recess.cfm">provisional</a>. <a href="http://robertbrook.com/is-the-house-sitting/">More about this site</a>. Your feedback is welcome at <address>mail@robertbrook.com</address>.
-   
-   </div>
-</div>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
