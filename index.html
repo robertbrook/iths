@@ -11,64 +11,60 @@
 	<a href="http://github.com/robertbrook/iths"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
 
 	<h1>Is The House Sitting?</h1>
+	
+	<p>This service is hosted on <a href="http://code.google.com/appengine/">Google App Engine</a> and <a href="http://github.com/robertbrook/iths">the code is public at GitHub</a>. All Recess dates are <a href="http://www.parliament.uk/what_s_on/recess.cfm">provisional</a>. <a href="http://robertbrook.com/is-the-house-sitting/">More about this site</a>. Your feedback is welcome at mail@robertbrook.com.</p>
+	
 	<!--Commons --><div id="commons">
 	<h2>The House of Commons</h2>
-          {% if inRecessCommons %} <ol><li>The House of Commons is in Recess.</li></ol> {% endif %}
+          {% if inRecessCommons %} <p><em>The House of Commons is in Recess.</em></p> {% endif %}
 			
 {% if commons_sitting %}
-<ul>
+
   {% for entry in commons.entries %}
-  <li>{{entry.summary}} <span class="title">{{entry.title}}</span></li>
+  <p><strong>{{entry.summary}}</strong><br/>{{entry.title}}</p>
 	{% endfor %}
-	</ul>
+
 	{% else %}
-	<ul>
-		
-			<li>The House of Commons Calendar has no entries for today.</li>
-			
-			</ul>
-	
+			<p>The House of Commons Calendar has no entries for today.</p>
   {% endif %}</div>
   <!-- //commons -->
   
   <!-- Lords --><div id="lords"><h2>The House of Lords</h2>
 	 {% if inRecessLords %}
 		
-			<ul><li>The House of Lords is in Recess.</li></ol>
+			<p><em>The House of Lords is in Recess.</em></p>
 			{% endif %}
 			
             {% if lords_sitting %}
-<ul>
-  {% for entry in lords.entries %}
-<li>{{entry.summary}} <span class="title">{{entry.title}}</span></li>
-	{% endfor %}
-	</ul>
-	{% else %}
-	<ul>
 
-			<li>The House of Lords Calendar has no entries for today.</li>
-			
-			</ul>
+  {% for entry in lords.entries %}
+<p><strong>{{entry.summary}}</strong><br/>{{entry.title}}</p>
+	{% endfor %}
+
+	{% else %}
+
+			<p>The House of Lords Calendar has no entries for today.</p>
+
   {% endif %}</div><!-- //lords --><!-- Twitter -->
 <div id="twitter">
 	<h2>@UKParliament on Twitter</h2><ul>
 			{% for entry in parliament.entries %}
-			<li>{{entry.title|urlize}} <!--<span class="date">{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</span>--></li>
-			
+
+			<p>{{entry.title|urlize}}
+<sup>{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</sup></p>
+
 				{% endfor %}
 				        </ul></div><!-- //Twitter -->
 								<!-- tweetminster -->
 							<div id="tweetminster">
-								<h2>Tweetminster</h2><ul>
+								<h2>Tweetminster</h2>
 										{% for entry in tweetminster.entries %}
-										<li>{{entry.title|urlize}}</li>
+										<p>{{entry.title|urlize}}</p>
 
 											{% endfor %}
-											        </ul></div><!-- //tweetminster -->
+											        </div><!-- //tweetminster -->
 											
 														
-																		
-				        <small><p><a href="http://www.isthehousesitting.com">Is The House Sitting</a> is not endorsed by the <a href="http://www.parliament.uk">UK Parliament</a> or <a href="http://www.millbanksystems.com">Millbank Systems</a>. The content on this page is generated from <a href="http://services.parliament.uk/calendar/">the UK Parliamentary Calendar</a> and from <a href="http://www.twitter.com/ukparliament">the UK Parliament Twitter feed</a>. This service is hosted on <a href="http://code.google.com/appengine/">Google App Engine</a> and <a href="http://github.com/robertbrook/iths">the code is public at GitHub</a>. All Recess dates are <a href="http://www.parliament.uk/what_s_on/recess.cfm">provisional</a>. <a href="http://robertbrook.com/is-the-house-sitting/">More about this site</a>. Your feedback is welcome at mail@robertbrook.com.</p></small>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

@@ -1,5 +1,6 @@
 import os
 import feedparser
+import re
 from google.appengine.api import urlfetch
 from google.appengine.ext.webapp import template
 from google.appengine.ext import webapp
@@ -49,9 +50,7 @@ class MainPage(webapp.RequestHandler):
     lords = get_feed("http://services.parliament.uk/calendar/lords.rss")
     parliament = get_feed("http://twitter.com/statuses/user_timeline/6467332.atom")
     tweetminster = get_feed("http://www.tweetminster.co.uk/tweets/tweeters.rss")
-    # allitems = []
-    # allitems = commons.entries + lords.entries + parliament.entries + tweetminster.entries
-    # allitems.sort(lambda x,y: cmp(y.published_parsed,x.published_parsed))
+
     if commons.entries: commons_sitting = 1
     if lords.entries: lords_sitting = 1
     
@@ -60,11 +59,13 @@ class MainPage(webapp.RequestHandler):
     for entry in parliament.entries:
         entry.title = entry.title[14:]
         
-    # for entry in commons.entries:
-    #     if entry.title == "Westminster Hall -": commons.entries.remove(entry)
-    #     if entry.summary == "": commons.entries.remove(entry)
+    for entry in tweetminster.entries:
+        #words = re.split('\W+', entry.title,1)
+        entry.title = '@' + entry.title
+        #entry.title = 'http://twitter.com/' + words[0] + ' ' + words[1]
+
     template_values = {
-      'today': datetime.today().strftime('%Y-%m-%d %H:%M'),
+      'today': datetime.today().day,
       'inRecessCommons': inRangeCommons(datetime.today().strftime('%Y-%m-%d %H:%M'), ranges),
       'inRecessLords': inRangeLords(datetime.today().strftime('%Y-%m-%d %H:%M'), ranges),
       'commons': commons,
@@ -73,7 +74,6 @@ class MainPage(webapp.RequestHandler):
       'commons_sitting': commons_sitting,
       'lords_sitting': lords_sitting,
       'tweetminster': tweetminster,
-      # 'allitems': allitems
        }
 
     path = os.path.join(os.path.dirname(__file__), 'index.html')
