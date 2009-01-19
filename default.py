@@ -49,7 +49,9 @@ class MainPage(webapp.RequestHandler):
     lords = get_feed("http://services.parliament.uk/calendar/lords.rss")
     parliament = get_feed("http://twitter.com/statuses/user_timeline/6467332.atom")
     tweetminster = get_feed("http://www.tweetminster.co.uk/tweets/tweeters.rss")
-
+    # allitems = []
+    # allitems = commons.entries + lords.entries + parliament.entries + tweetminster.entries
+    # allitems.sort(lambda x,y: cmp(y.published_parsed,x.published_parsed))
     if commons.entries: commons_sitting = 1
     if lords.entries: lords_sitting = 1
     
@@ -71,6 +73,7 @@ class MainPage(webapp.RequestHandler):
       'commons_sitting': commons_sitting,
       'lords_sitting': lords_sitting,
       'tweetminster': tweetminster,
+      # 'allitems': allitems
        }
 
     path = os.path.join(os.path.dirname(__file__), 'index.html')
