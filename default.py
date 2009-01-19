@@ -48,6 +48,8 @@ class MainPage(webapp.RequestHandler):
     commons = get_feed("http://services.parliament.uk/calendar/commons.rss")
     lords = get_feed("http://services.parliament.uk/calendar/lords.rss")
     parliament = get_feed("http://twitter.com/statuses/user_timeline/6467332.atom")
+    tweetminster = get_feed("http://www.tweetminster.co.uk/tweets/tweeters.rss")
+
     if commons.entries: commons_sitting = 1
     if lords.entries: lords_sitting = 1
     
@@ -68,6 +70,7 @@ class MainPage(webapp.RequestHandler):
       'parliament': parliament,
       'commons_sitting': commons_sitting,
       'lords_sitting': lords_sitting,
+      'tweetminster': tweetminster,
        }
 
     path = os.path.join(os.path.dirname(__file__), 'index.html')
