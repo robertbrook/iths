@@ -59,6 +59,11 @@ class MainPage(webapp.RequestHandler):
     for entry in parliament.entries:
         entry.title = entry.title[14:]
         
+    for entry in parliament.entries:
+        an_url = re.compile("http://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+")
+        #entry.title = re.sub(an_url, "xxx", entry.title)
+        #entry.title.replace('e', 'x')
+        
     for entry in tweetminster.entries:
         #words = re.split('\W+', entry.title,1)
         entry.title = '@' + entry.title

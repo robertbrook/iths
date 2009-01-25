@@ -9,12 +9,10 @@
 </head>
 <body id="isthehousesitting-com">
 	<a href="http://github.com/robertbrook/iths"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
-
-	<h1>Is The House Sitting?</h1>
-
-	<!--Commons --><div id="commons">
-	<h3>The House of Commons</h3>
-          {% if inRecessCommons %} <p><em>The House of Commons is in Recess.</em></p> {% endif %}
+	
+	<table style="width:66%;" cellpadding="5" cellspacing="5">
+		
+		<tr valign="top"><td><small>THE HOUSE OF COMMONS</small></td><td>{% if inRecessCommons %} <p><em>The House of Commons is in Recess.</em></p> {% endif %}
 			
 {% if commons_sitting %}
 
@@ -23,48 +21,37 @@
 	{% endfor %}
 
 	{% else %}
-			<p>The House of Commons Calendar has no entries for today.</p>
-  {% endif %}</div>
-  <!-- //commons -->
-  
-  <!-- Lords --><div id="lords"><h3>The House of Lords</h3>
-	 {% if inRecessLords %}
-		
-			<p><em>The House of Lords is in Recess.</em></p>
-			{% endif %}
-			
-            {% if lords_sitting %}
+			<p>The House of Commons Calendar has no business recorded for today.</p>
+  {% endif %}</td></tr>
+		<tr valign="top"><td><small>THE HOUSE OF LORDS</small></td><td>{% if inRecessLords %}
 
-  {% for entry in lords.entries %}
-<p><strong>{{entry.summary}}</strong><br/>{{entry.title}}</p>
-	{% endfor %}
+				<p><em>The House of Lords is in Recess.</em></p>
+				{% endif %}
 
-	{% else %}
+	            {% if lords_sitting %}
 
-			<p>The House of Lords Calendar has no entries for today.</p>
+	  {% for entry in lords.entries %}
+	<p><strong>{{entry.summary}}</strong><br/>{{entry.title}}</p>
+		{% endfor %}
 
-  {% endif %}</div><!-- //lords --><!-- Twitter -->
-<div id="twitter">
-	<h3>@UKParliament on Twitter</h3>
-			{% for entry in parliament.entries %}
+		{% else %}
 
-			<p>{{entry.title|urlize}}
-<sup>{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</sup></p>
+				<p>The House of Lords Calendar has no business recorded for today.</p>
 
-				{% endfor %}
-				        </div><!-- //Twitter -->
-								<!-- tweetminster -->
-							<div id="tweetminster">
-								<h3>Tweetminster</h3>
-										{% for entry in tweetminster.entries %}
-										<p>{{entry.title|urlize}}</p>
+	  {% endif %}</td></tr>
+		<tr valign="top"><td><small>TWITTER.COM/<br/>UKPARLIAMENT</small></td><td>{% for entry in parliament.entries %}
 
-											{% endfor %}
-											        </div><!-- //tweetminster -->
-											
-													<p>All Recess dates are <a href="http://www.parliament.uk/what_s_on/recess.cfm">provisional</a>. <a href="http://robertbrook.com/is-the-house-sitting/">More about this site</a>. Your feedback is welcome at mail@robertbrook.com.</p>
+		<p>{{entry.title|urlize}}
+<small>{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</small></p>
+
+			{% endfor %}</td></tr>
+			<tr valign="top"><td><small>TWEETMINSTER</small></td><td>{% for entry in tweetminster.entries %}
+			<p>{{entry.title|urlize}}</p>
+
+				{% endfor %}</td></tr>
+				
+	</table>
 														
-
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
