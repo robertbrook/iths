@@ -1,7 +1,7 @@
 <html>
 <head>
-   <title>isthehousesitting.com</title>
-   <link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Oldstyle" type="text/css">  
+   <title>Is The House Sitting?</title>
+   <link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Steely" type="text/css">  
    <link rel="alternate" type="application/atom+xml" href="http://twitter.com/statuses/user_timeline/6467332.atom" title="UKParliament on Twitter">
     <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Commons calendar">
     <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Lords calendar">
@@ -11,11 +11,9 @@
 	<a href="http://github.com/robertbrook/iths"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
 
 	<h1>Is The House Sitting?</h1>
-	
-	<p>This service is hosted on <a href="http://code.google.com/appengine/">Google App Engine</a> and <a href="http://github.com/robertbrook/iths">the code is public at GitHub</a>. All Recess dates are <a href="http://www.parliament.uk/what_s_on/recess.cfm">provisional</a>. <a href="http://robertbrook.com/is-the-house-sitting/">More about this site</a>. Your feedback is welcome at mail@robertbrook.com.</p>
-	
+
 	<!--Commons --><div id="commons">
-	<h2>The House of Commons</h2>
+	<h3>The House of Commons</h3>
           {% if inRecessCommons %} <p><em>The House of Commons is in Recess.</em></p> {% endif %}
 			
 {% if commons_sitting %}
@@ -29,7 +27,7 @@
   {% endif %}</div>
   <!-- //commons -->
   
-  <!-- Lords --><div id="lords"><h2>The House of Lords</h2>
+  <!-- Lords --><div id="lords"><h3>The House of Lords</h3>
 	 {% if inRecessLords %}
 		
 			<p><em>The House of Lords is in Recess.</em></p>
@@ -47,23 +45,24 @@
 
   {% endif %}</div><!-- //lords --><!-- Twitter -->
 <div id="twitter">
-	<h2>@UKParliament on Twitter</h2><ul>
+	<h3>@UKParliament on Twitter</h3>
 			{% for entry in parliament.entries %}
 
 			<p>{{entry.title|urlize}}
 <sup>{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</sup></p>
 
 				{% endfor %}
-				        </ul></div><!-- //Twitter -->
+				        </div><!-- //Twitter -->
 								<!-- tweetminster -->
 							<div id="tweetminster">
-								<h2>Tweetminster</h2>
+								<h3>Tweetminster</h3>
 										{% for entry in tweetminster.entries %}
 										<p>{{entry.title|urlize}}</p>
 
 											{% endfor %}
 											        </div><!-- //tweetminster -->
 											
+													<p>All Recess dates are <a href="http://www.parliament.uk/what_s_on/recess.cfm">provisional</a>. <a href="http://robertbrook.com/is-the-house-sitting/">More about this site</a>. Your feedback is welcome at mail@robertbrook.com.</p>
 														
 
 <script type="text/javascript">
