@@ -1,18 +1,19 @@
 <html>
 <head>
    <title>Is The House Sitting?</title>
-   <link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Steely" type="text/css">  
    <link rel="alternate" type="application/atom+xml" href="http://twitter.com/statuses/user_timeline/6467332.atom" title="UKParliament on Twitter">
     <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Commons calendar">
     <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Lords calendar">
     <link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.0.0pr2/build/cssbase/base-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?3.0.0pr2/build/yui/yui-min.js"></script>
 </head>
 <body id="isthehousesitting-com">
 	<a href="http://github.com/robertbrook/iths"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
 	
-	<table style="width:66%;" cellpadding="5" cellspacing="5">
-		
-		<tr valign="top"><td><small>THE HOUSE OF COMMONS</small></td><td>{% if inRecessCommons %} <p><em>The House of Commons is in Recess.</em></p> {% endif %}
+THE HOUSE OF COMMONS
+
+{% if inRecessCommons %} <p><em>The House of Commons is in Recess.</em></p> {% endif %}
 			
 {% if commons_sitting %}
 
@@ -22,8 +23,13 @@
 
 	{% else %}
 			<p>The House of Commons Calendar has no business recorded for today.</p>
-  {% endif %}</td></tr>
-		<tr valign="top"><td><small>THE HOUSE OF LORDS</small></td><td>{% if inRecessLords %}
+  {% endif %}
+  
+  
+  THE HOUSE OF LORDS
+  
+  
+  {% if inRecessLords %}
 
 				<p><em>The House of Lords is in Recess.</em></p>
 				{% endif %}
@@ -38,19 +44,26 @@
 
 				<p>The House of Lords Calendar has no business recorded for today.</p>
 
-	  {% endif %}</td></tr>
-		<tr valign="top"><td><small>TWITTER.COM/<br/>UKPARLIAMENT</small></td><td>{% for entry in parliament.entries %}
+	  {% endif %}
+	  
+	  
+	  TWITTER.COM/<br/>UKPARLIAMENT
+	  
+	  
+	  {% for entry in parliament.entries %}
 
 		<p>{{entry.title|urlize}}
 <small>{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</small></p>
 
-			{% endfor %}</td></tr>
-			<tr valign="top"><td><small>TWEETMINSTER</small></td><td>{% for entry in tweetminster.entries %}
+			{% endfor %}
+			
+			
+			TWEETMINSTER
+			
+			{% for entry in tweetminster.entries %}
 			<p>{{entry.title|urlize}}</p>
 
-				{% endfor %}</td></tr>
-				
-	</table>
+				{% endfor %}
 														
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
