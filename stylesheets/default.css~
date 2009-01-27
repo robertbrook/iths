@@ -1,17 +1,6 @@
-a {text-decoration:none;}
-body {width:33%;min-width:250px;margin:auto;background-color:white;color:#333;}
-h1, h2 {font-size:100%;color:#999;}
-ol
-{
-padding-left: 0;
-margin-left: 0;
-}
+   #wrapper { width: 66%; min-width: 250px; }
+   
 
-ol li
-{
-list-style: none;
-margin: 0;
-padding: 0.5em 0;
-}
+#hd, #ft{padding:2em 0;}
 
-#commons, #lords, #twitter, #footer {border-top: 1pt solid #999;padding:0 0.5em;margin:0.5em 0;}
+p{padding:0.75em 0.25em;}
