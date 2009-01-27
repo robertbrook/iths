@@ -1,4 +1,4 @@
-#wrapper { width: 90%; min-width: 250px; }
+#wrapper { width: 90%; }
    
 h1, h2 {font-weight:bold;}
 #hd, #ft{padding:2em 0;}
