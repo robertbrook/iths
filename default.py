@@ -71,6 +71,8 @@ class MainPage(webapp.RequestHandler):
       'commons': commons,
       'lords': lords,
       'parliament': parliament,
+      # 'parliament': [commons.entries + lords.entries][0],
+      # 'parliament': (commons.entries + tweetminster.entries),
       'commons_sitting': commons_sitting,
       'lords_sitting': lords_sitting,
       'tweetminster': tweetminster,
