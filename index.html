@@ -28,7 +28,7 @@
 					{% if commons_sitting %}
 
 					  {% for entry in commons.entries %}
-					  <p>{{entry.summary}}<br/>{{entry.title}}</p>
+					  <p><h3 class="summary">{{entry.summary}}</h3>{{entry.title}}</p>
 						{% endfor %}
 
 						{% else %}
@@ -48,7 +48,7 @@
 					            {% if lords_sitting %}
 
 					  {% for entry in lords.entries %}
-					<p>{{entry.summary}}<br/>{{entry.title}}</p>
+					<p><h3 class="summary">{{entry.summary}}</h3>{{entry.title}}</p>
 						{% endfor %}
 
 						{% else %}
@@ -60,25 +60,25 @@
     </div>
     <div class="yui-g">
         <div class="yui-u first">
-					<h2>twitter.com/ukparliament</h2>
+					<h2>UKParliament on Twitter</h2>
 				  {% for entry in parliament.entries %}
 
-					<p>{{entry.title|urlize}}
-			{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}</p>
+					<p><h3>{{entry.title|urlize}}</h3>
+			{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</p>
 
 						{% endfor %}	        </div>
         <div class="yui-u">
-					<h2>MPs on Twitter</h2>
+					<h2><abbr title="Members of Parliament">MPs</abbr> and <abbr title="Prospective Parliamentary Candidates">PPCs</abbr> on Twitter</h2>
 
 					{% for entry in tweetminster.entries %}
-					<p>{{entry.title|urlize}}</p>
+					<p><h3>{{entry.title|urlize}}</h3></p>
 
 						{% endfor %}	        </div>
     </div>
 </div>
 
 	</div>
-   <div id="ft">Source code</div>
+   <div id="ft"><address>mail@robertbrook.com</address></div>
 </div>
 
 <script type="text/javascript">
