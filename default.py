@@ -54,7 +54,7 @@ class MainPage(webapp.RequestHandler):
     if commons.entries: commons_sitting = 1
     if lords.entries: lords_sitting = 1
     
-    del parliament.entries[10:]
+    #del parliament.entries[10:]
 
     for entry in parliament.entries:
         entry.title = entry.title[14:]
