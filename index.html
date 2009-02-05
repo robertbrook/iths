@@ -28,7 +28,7 @@
 					{% if commons_sitting %}
 
 					  {% for entry in commons.entries %}
-					  <p><h3 class="summary">{{entry.summary}}</h3>{{entry.title}}</p>
+					  <p><span class="title">{{entry.title}}</span> <span class="summary">{{entry.summary}}</span></p>
 						{% endfor %}
 
 						{% else %}
@@ -48,7 +48,7 @@
 					            {% if lords_sitting %}
 
 					  {% for entry in lords.entries %}
-					<p><h3 class="summary">{{entry.summary}}</h3>{{entry.title}}</p>
+					  <p><span class="title">{{entry.title}}</span> <span class="summary">{{entry.summary}}</span></p>
 						{% endfor %}
 
 						{% else %}
@@ -63,7 +63,7 @@
 					<h2>UKParliament on Twitter</h2>
 				  {% for entry in parliament.entries %}
 
-					<p><h3>{{entry.title|urlize}}</h3>
+					<p>{{entry.title|urlize}}
 			{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</p>
 
 						{% endfor %}	        </div>
@@ -71,14 +71,14 @@
 					<h2><abbr title="Members of Parliament">MPs</abbr> and <abbr title="Prospective Parliamentary Candidates">PPCs</abbr> on Twitter</h2>
 
 					{% for entry in tweetminster.entries %}
-					<p><h3>{{entry.title|urlize}}</h3></p>
+					<p>{{entry.title|urlize}}</p>
 
 						{% endfor %}	        </div>
     </div>
 </div>
 
 	</div>
-   <div id="ft"><address>mail@robertbrook.com</address></div>
+   <div id="ft"><address>mail@robertbrook.com</address> Elsewhere: <a href="http://www.parlytweets.com">ParlyTweets</a></div>
 </div>
 
 <script type="text/javascript">

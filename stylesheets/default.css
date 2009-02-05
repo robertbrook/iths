@@ -1,9 +1,7 @@
+
 #wrapper { width: 90%; }
-   
-h1, h2 {font-weight:bold;}
+a {text-decoration:none;}
+h1, h2 {font-weight:bold;font-size:108%;}
 #hd, #ft{padding:2em 0;}
-h3.summary {font-weight:bold;}
-
-p{padding-bottom:0.75em; padding-right: 0.5em;}
-.summary {font-weight:bold;}
-
+p{font-size:100%;padding-bottom:0.5em; padding-right: 0.5em;padding-top:0.5em;}
+.title {font-variant: small-caps;}
