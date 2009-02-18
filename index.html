@@ -59,7 +59,7 @@
 						<h2>news.parliament.uk</h2>
 
 						{% for entry in news.entries %}
-					  <p><a href="{{entry.link}}">{{entry.title}}</a><br/> <span class="summary">{{entry.summary}}</span> {{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</p>
+					  <p><b><a href="{{entry.link}}">{{entry.title}}</a></b><br/> <span class="summary">{{entry.summary}}</span> {{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</p>
 						{% endfor %}
 
 						</div>
