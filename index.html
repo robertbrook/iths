@@ -13,11 +13,10 @@
        <link href="/stylesheets/default.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
 <body id="isthehousesitting-com">
-	<div id="doc2" class="yui-t7">
+	<div id="doc3" class="yui-t7">
    <div id="hd"><h1>Is The House Sitting?</h1></div>
    <div id="bd">
-	<div class="yui-g">
-    <div class="yui-g first">
+    <div class="yui-gh">
         <div class="yui-u first">
 					<h2>The House of Commons</h2>
 
@@ -56,27 +55,37 @@
 					
 						
 	        </div>
-    </div>
-    <div class="yui-g">
-        <div class="yui-u first">
+					<div class="yui-u">
+						<h2>news.parliament.uk</h2>
+
+						{% for entry in news.entries %}
+					  <p><a href="{{entry.link}}">{{entry.title}}</a><br/> <span class="summary">{{entry.summary}}</span> {{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</p>
+						{% endfor %}
+
+						</div>
+        <div class="yui-u">
 					<h2>UKParliament on Twitter</h2>
 				  {% for entry in parliament.entries %}
 
 					<p>{{entry.title|urlize}}
 			{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</p>
 
-						{% endfor %}	        </div>
+						{% endfor %}	        
+						</div>
         <div class="yui-u">
 					<h2><abbr title="Members of Parliament">MPs</abbr> and <abbr title="Prospective Parliamentary Candidates">PPCs</abbr> on Twitter</h2>
 
 					{% for entry in tweetminster.entries %}
 					<p>{{entry.title|urlize}}</p>
 
-						{% endfor %}	        </div>
+						{% endfor %}
+						
     </div>
+
 </div>
 
-	</div>
+
+	
    <div id="ft"><address>mail@robertbrook.com</address> Elsewhere: <a href="http://www.parlytweets.com">ParlyTweets</a></div>
 </div>
 
