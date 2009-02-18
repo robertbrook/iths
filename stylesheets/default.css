@@ -1,7 +1,12 @@
-
-#wrapper { width: 90%; }
 a {text-decoration:none;}
-h1, h2 {font-weight:bold;font-size:108%;}
+h1 {font-weight:bold;font-size:116%;}
+h2 {font-weight:bold;font-size:108%;}
+h3 {font-weight:bold;font-size:100%;}
+.yui-gh .yui-u {width:18%;margin-left:2.4%;float:left;}
+		.yui-gh .first {margin-left:0;} 
+		.yui-gh:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+		.yui-gh {zoom:1;}
+
 #hd, #ft{padding:2em 0;}
 p{font-size:100%;padding-bottom:0.5em; padding-right: 0.5em;padding-top:0.5em;}
 .title {font-variant: small-caps;}
