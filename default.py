@@ -9,10 +9,17 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 import time 
 from datetime import datetime 
 
+def twitter_at_reply(tweet):
+    pattern = re.compile(r"(\A|\W)@(?P<user>\w+)(\Z|\W)")
+    repl = (r'\1<a href="http://twitter.com/\g<user>"'
+    r' >@\g<user></a>\3')
+    return pattern.sub(repl, tweet)
+
 def make_datetime(s, fmt='%Y-%m-%d %H:%M'): 
      '''convert string to datetime''' 
      ts = time.mktime(time.strptime(s, fmt)) 
      return datetime.fromtimestamp(ts) 
+
 def inRangeCommons(s, ranges): 
      dt = make_datetime(s) 
      for begin,end in ranges: 
@@ -59,11 +66,13 @@ class MainPage(webapp.RequestHandler):
 
     for entry in parliament.entries:
         entry.title = entry.title[14:]
+        entry.title = twitter_at_reply(entry.title)
 
     for entry in tweetminster.entries:
         #words = re.split('\W+', entry.title,1)
         entry.title = '@' + entry.title
         #entry.title = 'http://twitter.com/' + words[0] + ' ' + words[1]
+        entry.title = twitter_at_reply(entry.title)
 
     template_values = {
       'today': datetime.today().day,
