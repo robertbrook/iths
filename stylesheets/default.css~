@@ -1,8 +1,0 @@
-#wrapper { width: 90%; }
-   
-h1, h2 {font-weight:bold;}
-#hd, #ft{padding:2em 0;}
-h3.summary {font-weight:bold;}
-
-p{padding-bottom:0.75em; padding-right: 0.25em;}
-.summary {font-weight:bold;}
