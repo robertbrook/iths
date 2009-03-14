@@ -6,7 +6,7 @@
 	<link rel="alternate" type="application/atom+xml" href="http://twitter.com/statuses/user_timeline/6467332.atom" title="UKParliament on Twitter">
     <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Commons calendar">
     <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Lords calendar">
-    <link rel="alternate" type="application/rss+xml" href="http://www.tweetminster.co.uk/tweets/tweeters.rss" title="Tweetminster">
+    <link rel="alternate" type="application/rss+xml" href="http://feeds2.feedburner.com/TweetminsterLivestreamMpsWhoTweet" title="Tweetminster">
 <link rel="alternate" type="application/atom+xml" title="Parliament News" href="http://news.parliament.uk/feed/atom/" />
     <link rel="shortcut icon" href="/images/favicon.ico">
    <link rel="stylesheet" href="http://yui.yahooapis.com/2.5.1/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
@@ -18,7 +18,7 @@
    <div id="bd">
     <div class="yui-gh">
         <div class="yui-u first">
-					<h2>The House of Commons</h2>
+					<h2><a href="http://services.parliament.uk/calendar/">The House of Commons</a></h2>
 
 					{% if inRecessCommons %} <p>The House of Commons is in Recess.</p> {% endif %}
 
@@ -34,7 +34,7 @@
 					
 	        </div>
         <div class="yui-u">
-				<h2>The House of Lords</h2>
+				<h2><a href="http://services.parliament.uk/calendar/">The House of Lords</a></h2>
 
 				  {% if inRecessLords %}
 
@@ -56,7 +56,7 @@
 						
 	        </div>
 					<div class="yui-u">
-						<h2>news.parliament.uk</h2>
+						<h2><a href="http://news.parliament.uk/">news.parliament.uk</a></h2>
 
 						{% for entry in news.entries %}
 					  <p><b><a href="{{entry.link}}">{{entry.title}}</a></b><br/> <span class="summary">{{entry.summary}}</span> {{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</p>
@@ -64,7 +64,7 @@
 
 						</div>
         <div class="yui-u">
-					<h2>UKParliament on Twitter</h2>
+					<h2><a href="http://twitter.com/ukparliament">UKParliament on Twitter</a></h2>
 				  {% for entry in parliament.entries %}
 
 					<p>{{entry.title|urlize}}
@@ -73,7 +73,7 @@
 						{% endfor %}	        
 						</div>
         <div class="yui-u">
-					<h2><abbr title="Members of Parliament">MPs</abbr> and <abbr title="Prospective Parliamentary Candidates">PPCs</abbr> on Twitter</h2>
+					<h2><a href="http://feeds2.feedburner.com/TweetminsterLivestreamMpsWhoTweet"><abbr title="Members of Parliament">MPs</abbr> and <abbr title="Prospective Parliamentary Candidates">PPCs</abbr> on Twitter</a></h2>
 
 					{% for entry in tweetminster.entries %}
 					<p>{{entry.title|urlize}}</p>
