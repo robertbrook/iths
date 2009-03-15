@@ -4,7 +4,7 @@
 <head>
    <title>Is The House Sitting?</title>
    <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
-   <link rel="alternate" type="application/rss+xml" href="http://feeds2.feedburner.com/TweetminsterLivestreamMpsWhoTweet" title="Tweetminster">
+   <link rel="alternate" type="application/rss+xml" href="http://pipes.yahoo.com/pipes/pipe.run?_id=2ebbec14ac85222b88f5a0481929dfd8&_render=rss" title="Is The House Sitting aggregated feeds">
    <link rel="shortcut icon" href="/images/favicon.ico">
       <link href="/stylesheets/default.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
@@ -13,9 +13,13 @@
    <div id="hd" role="banner"><h1>Is The House Sitting?</h1><em>I'm simplifying the feed displayed here.<br/>Please bear with me for a day or so.</em></div>
    <div id="bd" role="main">
 	<div class="yui-g">
-		{% for entry in aggregated.entries %}
-		  <p><!-- {{entry}} -->{{entry.title|urlize}}</p>
-			{% endfor %}
+		
+		{{thet}}
+			{% for item in aggregated.items %}
+			  <!-- {{item}} -->
+			  <p><a href="{{item.link}}">{{item.title}}</a> {{item.description|urlize}}</p>
+							{% endfor %}		
+	
 				</div>
 
 	</div>
