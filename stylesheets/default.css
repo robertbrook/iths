@@ -1,12 +1,7 @@
 a {text-decoration:none;}
-h1 {font-weight:bold;font-size:116%;}
-h2 {font-weight:bold;font-size:108%;}
-h3 {font-weight:bold;font-size:100%;}
-.yui-gh .yui-u {width:18%;margin-left:1%;float:left;}
-.yui-u {border-left:1pt solid #bbb;padding-left:0.5em;}
-.yui-gh .first {margin-left:0;border:none;} 
-.yui-gh:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
-.yui-gh {zoom:1;}
+h1 {font-weight:bold;}
 p{padding-bottom:0.5em; padding-right: 0.5em;padding-top:0.5em;}
 .title {font-variant: small-caps;}
-#bd {padding:1em 0;}
+#hd, #bd, #ft {padding:1em 0;}
+#isthehousesitting-com { width: 33%; min-width: 250px; font-size:138.5%;}
+em{color:#666;}

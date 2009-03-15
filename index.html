@@ -3,91 +3,23 @@
 <html>
 <head>
    <title>Is The House Sitting?</title>
-	<link rel="alternate" type="application/atom+xml" href="http://twitter.com/statuses/user_timeline/6467332.atom" title="UKParliament on Twitter">
-    <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Commons calendar">
-    <link rel="alternate" type="application/rss+xml" href="http://services.parliament.uk/calendar/commons.rss" title="House of Lords calendar">
-    <link rel="alternate" type="application/rss+xml" href="http://feeds2.feedburner.com/TweetminsterLivestreamMpsWhoTweet" title="Tweetminster">
-<link rel="alternate" type="application/atom+xml" title="Parliament News" href="http://news.parliament.uk/feed/atom/" />
-    <link rel="shortcut icon" href="/images/favicon.ico">
-   <link rel="stylesheet" href="http://yui.yahooapis.com/2.5.1/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
-       <link href="/stylesheets/default.css" media="screen" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+   <link rel="alternate" type="application/rss+xml" href="http://feeds2.feedburner.com/TweetminsterLivestreamMpsWhoTweet" title="Tweetminster">
+   <link rel="shortcut icon" href="/images/favicon.ico">
+      <link href="/stylesheets/default.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
-<body id="isthehousesitting-com">
-	<div id="doc3" class="yui-t7">
-   <div id="hd"><!-- <h1>Is The House Sitting?</h1> --></div>
-   <div id="bd">
-    <div class="yui-gh">
-        <div class="yui-u first">
-					<h2><a href="http://services.parliament.uk/calendar/">The House of Commons</a></h2>
+<body>
+<div id="isthehousesitting-com" class="yui-t7">
+   <div id="hd" role="banner"><h1>Is The House Sitting?</h1><em>I'm simplifying the feed displayed here.<br/>Please bear with me for a day or so.</em></div>
+   <div id="bd" role="main">
+	<div class="yui-g">
+		{% for entry in aggregated.entries %}
+		  <p><!-- {{entry}} -->{{entry.title|urlize}}</p>
+			{% endfor %}
+				</div>
 
-					{% if inRecessCommons %} <p>The House of Commons is in Recess.</p> {% endif %}
-
-					{% if commons_sitting %}
-
-					  {% for entry in commons.entries %}
-					  <p><span class="title">{{entry.title}}</span> <span class="summary">{{entry.summary}}</span></p>
-						{% endfor %}
-
-						{% else %}
-								<p>The House of Commons Calendar has no business recorded for today.</p>
-					  {% endif %}
-					
-	        </div>
-        <div class="yui-u">
-				<h2><a href="http://services.parliament.uk/calendar/">The House of Lords</a></h2>
-
-				  {% if inRecessLords %}
-
-								<p>The House of Lords is in Recess.</p>
-								{% endif %}
-
-					            {% if lords_sitting %}
-
-					  {% for entry in lords.entries %}
-					  <p><span class="title">{{entry.title}}</span> <span class="summary">{{entry.summary}}</span></p>
-						{% endfor %}
-
-						{% else %}
-
-								<p>The House of Lords Calendar has no business recorded for today.</p>
-
-					  {% endif %}
-					
-						
-	        </div>
-					<div class="yui-u">
-						<h2><a href="http://news.parliament.uk/">news.parliament.uk</a></h2>
-
-						{% for entry in news.entries %}
-					  <p><b><a href="{{entry.link}}">{{entry.title}}</a></b><br/> <span class="summary">{{entry.summary}}</span> {{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</p>
-						{% endfor %}
-
-						</div>
-        <div class="yui-u">
-					<h2><a href="http://twitter.com/ukparliament">UKParliament on Twitter</a></h2>
-				  {% for entry in parliament.entries %}
-
-					<p>{{entry.title|urlize}}
-			{{entry.published_parsed.2}}.{{entry.published_parsed.1}}.{{entry.published_parsed.0}}</p>
-
-						{% endfor %}	        
-						</div>
-        <div class="yui-u">
-					<h2><a href="http://feeds2.feedburner.com/TweetminsterLivestreamMpsWhoTweet"><abbr title="Members of Parliament">MPs</abbr> and <abbr title="Prospective Parliamentary Candidates">PPCs</abbr> on Twitter</a></h2>
-
-					{% for entry in tweetminster.entries %}
-					<p>{{entry.title|urlize}}</p>
-
-						{% endfor %}
-						
-    </div>
-
+	</div>
+   <div id="ft" role="contentinfo"><p><address>mail@robertbrook.com</address> Elsewhere: <a href="http://www.parlytweets.com">ParlyTweets</a></p></div>
 </div>
-
-
-	
-   <div id="ft"><address>mail@robertbrook.com</address> Elsewhere: <a href="http://www.parlytweets.com">ParlyTweets</a></div>
-</div>
-
 </body>
 </html>

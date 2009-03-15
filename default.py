@@ -51,40 +51,21 @@ ranges = [(make_datetime(b), make_datetime(e)) for (b,e) in [
 
 class MainPage(webapp.RequestHandler):
   def get(self):
-    commons_sitting = 0
-    lords_sitting = 0
-    commons = get_feed("http://services.parliament.uk/calendar/commons.rss")
-    lords = get_feed("http://services.parliament.uk/calendar/lords.rss")
-    parliament = get_feed("http://twitter.com/statuses/user_timeline/6467332.atom")
-    tweetminster = get_feed("http://feeds2.feedburner.com/TweetminsterLivestreamMpsWhoTweet")
-    news = get_feed("http://news.parliament.uk/feed/atom/")	
-
-    if commons.entries: commons_sitting = 1
-    if lords.entries: lords_sitting = 1
+    aggregated = get_feed("http://pipes.yahoo.com/pipes/pipe.run?_id=2ebbec14ac85222b88f5a0481929dfd8&_render=rss")
     
-    #del parliament.entries[10:]
-
-    for entry in parliament.entries:
-        entry.title = entry.title[14:]
-        entry.title = twitter_at_reply(entry.title)
-
-    for entry in tweetminster.entries:
-        #words = re.split('\W+', entry.title,1)
-        entry.title = '@' + entry.title
-        #entry.title = 'http://twitter.com/' + words[0] + ' ' + words[1]
-        entry.title = twitter_at_reply(entry.title)
+    # for entry in parliament.entries:
+    #     entry.title = entry.title[14:]
+    #     entry.title = twitter_at_reply(entry.title)
+    # 
+    # for entry in tweetminster.entries:
+    #     entry.title = '@' + entry.title
+    #     entry.title = twitter_at_reply(entry.title)
 
     template_values = {
       'today': datetime.today().day,
       'inRecessCommons': inRangeCommons(datetime.today().strftime('%Y-%m-%d %H:%M'), ranges),
       'inRecessLords': inRangeLords(datetime.today().strftime('%Y-%m-%d %H:%M'), ranges),
-      'commons': commons,
-      'lords': lords,
-      'parliament': parliament,
-      'news': news,
-      'commons_sitting': commons_sitting,
-      'lords_sitting': lords_sitting,
-      'tweetminster': tweetminster,
+      'aggregated': aggregated
        }
 
     path = os.path.join(os.path.dirname(__file__), 'index.html')
